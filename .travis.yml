@@ -1,7 +1,7 @@
 language: go
 os: linux
 arch: ppc64le
-go: "1.11.x"
+#go: "1.11.x"
 cache:
   directories:
     - $HOME/.cache/go-build
@@ -22,6 +22,7 @@ before_install:
 
 script:
 #  - RELEASE_VERSION=$(cat release_version.txt)
+  - go version
   - wget https://github.com/rclone/rclone/releases/download/$VERSION/rclone-$VERSION.tar.gz
   - tar -xzf rclone-$VERSION.tar.gz
   - mv rclone-$VERSION rclone
