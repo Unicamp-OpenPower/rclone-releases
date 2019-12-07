@@ -11,31 +11,12 @@ env:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install build-essential python3 tar wget
-#  - python3 version.py
-#  - RELEASE_VERSION=$(cat release_version.txt)
-#  - FTP_VERSION=$(cat ftp_version.txt)
-#  - BUILD=true
-#  - if [ $RELEASE_VERSION == $FTP_VERSION ]; then
-#    BUILD=false;
-#    fi
+  - sudo apt-get install build-essential python3 tar wget 
+  - sudo apt-get install -y lftp
 
 script:
-#  - RELEASE_VERSION=$(cat release_version.txt)
-  - wget https://github.com/rclone/rclone/releases/download/$VERSION/rclone-$VERSION.tar.gz
-  - tar -xzf rclone-$VERSION.tar.gz
-  - mv rclone-$VERSION rclone
-  - cd rclone
-  - go get github.com/rclone/rclone/backend/all github.com/rclone/rclone/cmd github.com/rclone/rclone/cmd/all github.com/rclone/rclone/lib/plugin
-  - go build
-  - mkdir output
-  - mv rclone output/rclone-$VERSION
-  - ls -la output
-
-#deploy:
-#  provider: script  
-#  script: sudo apt-get install -y lftp; bash ftp_upload.sh
-#  skip_cleanup: true
+  - python3 ftp_version.py
+  - bash build.sh
 
 notifications:
   slack:
