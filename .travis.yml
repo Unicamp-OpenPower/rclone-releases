@@ -23,6 +23,7 @@ before_install:
 script:
 #  - RELEASE_VERSION=$(cat release_version.txt)
   - go version
+  - go get -u .
   - wget https://github.com/rclone/rclone/releases/download/$VERSION/rclone-$VERSION.tar.gz
   - tar -xzf rclone-$VERSION.tar.gz
   - mv rclone-$VERSION rclone
