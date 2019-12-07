@@ -22,12 +22,12 @@ before_install:
 
 script:
 #  - RELEASE_VERSION=$(cat release_version.txt)
-  - go version
-  - go get -u .
   - wget https://github.com/rclone/rclone/releases/download/$VERSION/rclone-$VERSION.tar.gz
   - tar -xzf rclone-$VERSION.tar.gz
   - mv rclone-$VERSION rclone
   - cd rclone
+  - go env
+  - ls
   - go build
   - mkdir output
   - mv rclone output/rclone-$VERSION
