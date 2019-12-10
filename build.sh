@@ -23,11 +23,11 @@ then
     ls -la output
     
     echo "MOVING BINARY"
-    if [[ $github_version > $ftp_version ]]
-    then
-        #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /test/marcelo/rclone/latest rclone-$github_version"
-        #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /test/marcelo/rclone/latest/rclone-$ftp_version"
-    fi
+    # if [[ $github_version > $ftp_version ]]
+    # then
+    #     #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /test/marcelo/rclone/latest rclone-$github_version"
+    #     #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /test/marcelo/rclone/latest/rclone-$ftp_version"
+    # fi
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O ppc64el/rclone rclone-$github_version"
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm ppc64el/rclone-$del_version"
 
