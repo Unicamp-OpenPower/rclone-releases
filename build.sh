@@ -16,7 +16,7 @@ then
     echo "moving"
     mv rclone-$github_version rclone
     echo "cd"
-    cd rclone
+    cd rclone/rclone-$github_version
     echo "go get"
     go get github.com/rclone/rclone/backend/all github.com/rclone/rclone/cmd github.com/rclone/rclone/cmd/all github.com/rclone/rclone/lib/plugin
 
