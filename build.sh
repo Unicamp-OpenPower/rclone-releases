@@ -11,15 +11,24 @@ if [ [$status==404] ]
 then
     echo "CLONING"
     wget https://github.com/rclone/rclone/releases/download/$github_version/rclone-$github_version.tar.gz
+    echo "UNZIPING"
     tar -xzf rclone-$github_version.tar.gz
+    echo "moving"
     mv rclone-$github_version rclone
+    echo "cd"
     cd rclone
+    echo "go get"
     go get github.com/rclone/rclone/backend/all github.com/rclone/rclone/cmd github.com/rclone/rclone/cmd/all github.com/rclone/rclone/lib/plugin
 
     echo "BUILDING"
     go build
+    echo "mkdir"
     mkdir output
+    echo "mv"
     mv rclone output/rclone-$github_version
+    echo "pwd"
+    pwd
+    echo "ls -la"
     ls -la output
     
     echo "MOVING BINARY"
