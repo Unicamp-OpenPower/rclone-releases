@@ -14,22 +14,23 @@ then
     echo "UNZIPING"
     tar -xzf rclone-$github_version.tar.gz
     echo "moving"
-    mv rclone-$github_version rclone
+    #mv rclone-$github_version rclone
     echo "cd"
-    cd rclone/rclone-$github_version
+    cd rclone-$github_version
     echo "go get"
     go get github.com/rclone/rclone/backend/all github.com/rclone/rclone/cmd github.com/rclone/rclone/cmd/all github.com/rclone/rclone/lib/plugin
 
     echo "BUILDING"
     go build
     echo "mkdir"
-    mkdir output
+    #mkdir output
     echo "mv"
-    mv rclone output/rclone-$github_version
+    #mv rclone output/rclone-$github_version
     echo "pwd"
     pwd
     echo "ls -la"
-    ls -la output
+    #ls -la output
+    ls -la
     
     echo "MOVING BINARY"
     # if [[ $github_version > $ftp_version ]]
