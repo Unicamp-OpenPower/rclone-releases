@@ -3,9 +3,11 @@ import requests
 html = str(
            requests.get('https://github.com/rclone/rclone/releases/latest')
            .content)
-index = html.find('Release ')
-github_version = html[index + 15:index + 20]
-print("Latest: ", github_version)
+index = html.find('rclone:v')
+github_version = html[index + 7 :index + 14]
+print(index)
+#print(html)
+print("Latest:", github_version)
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
 file.close()
