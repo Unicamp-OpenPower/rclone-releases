@@ -13,11 +13,11 @@ then
     go get github.com/rclone/rclone/backend/all github.com/rclone/rclone/cmd github.com/rclone/rclone/cmd/all github.com/rclone/rclone/lib/plugin
     go build
     #mkdir output
-    #mv rclone output/rclone-$github_version
+    mv rclone rclone-$github_version
     pwd
     #ls -la output
     ls -a
-    ./rclone --help
+    #./rclone --help
     
 
     #if [[ $github_version > $ftp_version ]]
