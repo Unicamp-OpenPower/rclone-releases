@@ -3,6 +3,8 @@ ftp_version=$(cat ftp_version.txt)
 del_version=$(cat delete_version.txt)
 
 addr="ftp://oplab9.parqtec.unicamp.br"
+echo $github_version
+echo $ftp_version
 
 if [ $github_version != $ftp_version ]
 then
@@ -12,12 +14,9 @@ then
     cd rclone-$github_version
     go get github.com/rclone/rclone/backend/all github.com/rclone/rclone/cmd github.com/rclone/rclone/cmd/all github.com/rclone/rclone/lib/plugin
     go build
-    #mkdir output
     mv rclone rclone-$github_version
-    pwd
-    #ls -la output
     ls -a
-    #./rclone --help
+    ./rclone-$github_version --help
     
 
     #if [[ $github_version > $ftp_version ]]
