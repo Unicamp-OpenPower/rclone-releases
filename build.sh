@@ -16,7 +16,8 @@ then
     #mv rclone output/rclone-$github_version
     pwd
     #ls -la output
-    ls -la
+    ls -a
+    ./rclone --help
     
 
     #if [[ $github_version > $ftp_version ]]
