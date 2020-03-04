@@ -18,7 +18,7 @@ html = str(
                         'https://oplab9.parqtec.unicamp.br/pub/ppc64el/rclone/'
                         ).content)
 index = html.rfind('rclone-')
-ftp_version = html[index + 7:index + 12]
+ftp_version = html[index + 7:index + 14]
 file = open('ftp_version.txt', 'w')
 file.writelines(ftp_version)
 file.close()
