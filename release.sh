@@ -7,6 +7,7 @@ LOCALPATH="/home/travis/gopath/src/github.com/Unicamp-OpenPower/rclone-releases/
 REPO1="/repository/debian/ppc64el/rclone"
 REPO2="/repository/rpm/ppc64le/rclone"
 
+
 if [ "$github_version" != "$ftp_version" ]
   then
     git clone https://$USERNAME:$TOKEN@github.com/Unicamp-OpenPower/repository-scrips.git
