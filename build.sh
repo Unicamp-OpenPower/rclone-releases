@@ -16,7 +16,8 @@ then
     make 
     ./rclone --version
     #go get github.com/rclone/rclone/backend/all github.com/rclone/rclone/cmd github.com/rclone/rclone/cmd/all github.com/rclone/rclone/lib/plugin
-    #go build    
+    #go build
+    pwd
     mv rclone rclone-$github_version
     if [[ $github_version != $ftp_version ]]
     then
