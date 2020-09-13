@@ -1,7 +1,7 @@
 language: go
 os: linux
 arch: ppc64le
-go: "1.13.x"
+go: "1.14.x"
 cache:
   directories:
     - $HOME/.cache/go-build
@@ -13,11 +13,13 @@ before_install:
   - sudo apt-get -y install python3-pip
   - pip3 install requests
   - sudo apt-get install -y lftp
-
+  - sudo apt install rpm
+  
 script:
   - python3 ftp_version.py
   - bash build.sh
-
+  - bash release.sh
+  
 notifications:
   slack:
     rooms:
