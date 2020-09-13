@@ -2,7 +2,7 @@
 github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 ROOTPATH="~/rpmbuild/RPMS/ppc64le"
-LOCALPATH="~/rclone"
+LOCALPATH="/home/travis/gopath/src/github.com/Unicamp-OpenPower/rclone-releases/rclone"
 REPO1="/repository/debian/ppc64el/rclone"
 REPO2="/repository/rpm/ppc64le/rclone"
 
