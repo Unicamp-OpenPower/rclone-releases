@@ -5,11 +5,18 @@ html = str(
            .content)
 index = html.find('rclone:v')
 github_version = html[index + 7 :index + 14]
+github_version2 = html[index + 8 :index + 14] # remove the caracter 'v'
 print(index)
 #print(html)
 print("Latest:", github_version)
+
+# version string: v1.xx.x
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
+file.close()
+#create the version file without v caracter in the string version: 1.xx.x
+file =open('github_version2.txt','w')
+file.writelines(github_version2)
 file.close()
 
 # find and save the current Docker version on FTP server
