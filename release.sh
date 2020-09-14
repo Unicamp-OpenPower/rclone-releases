@@ -18,7 +18,7 @@ if [ "$github_version" != "$ftp_version" ]
     sudo mv empacotar-rpm.sh  $LOCALPATH
     cd  $LOCALPATH
     sudo ./empacotar-deb.sh rclone rclone-$github_version $github_version2 " "
-    sudo ./empacotar-rpm.sh rclone rclone-$github_version $github_version2 " " "Rclone ("rsync for cloud storage") is a command line program to sync files and directories to and from different cloud storage providers."
+    sudo ./empacotar-rpm.sh rclone rclone-$github_version $github_version2 " " "rsync for cloud storage” - Google Drive, Amazon Drive, and more."
 fi
 
 if [[ $github_version != $ftp_version ]]
