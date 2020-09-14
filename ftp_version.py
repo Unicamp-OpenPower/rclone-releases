@@ -6,10 +6,7 @@ html = str(
 index = html.find('rclone:v')
 github_version = html[index + 7 :index + 14]
 github_version2 = html[index + 8 :index + 14] # remove the caracter 'v'
-print(index)
-#print(html)
-print("Latest:", github_version)
-print("Teste:", github_version2)
+
 # version string: v1.xx.x
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
