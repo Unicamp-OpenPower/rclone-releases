@@ -3,7 +3,7 @@ import requests
 html = str(
            requests.get('https://github.com/rclone/rclone/releases/latest')
            .content)
-index = html.find('rclone:v')
+index = html.find('rclone v')
 github_version = html[index + 7 :index + 14]
 github_version2 = html[index + 8 :index + 14] # remove the caracter 'v'
 
