@@ -9,6 +9,7 @@ cache:
     - $HOME/gopath/pkg/mod
 
 before_install:
+  - cat /etc/apt/sources.list
   - sudo apt-get update
   - sudo apt-get install build-essential python3
   - sudo apt-get -y install python3-pip
